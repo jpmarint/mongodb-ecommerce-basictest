@@ -1,0 +1,10 @@
+use("juan-store")
+
+db.products.insertOne({
+    name: 'Camiseta',
+    sizes: ['L', 'M'],
+    category: {
+        name: 'category name',
+        image: 'fakeurl'
+    }
+})

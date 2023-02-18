@@ -1,0 +1,34 @@
+use("juan-store")
+
+
+db.createCollection("products", {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['name'],
+            properties: {
+                name: {
+                    bsonType: 'string',
+                    description: "'name' must be a string and is required"
+                },
+                sizes: {
+                    bsonType: 'array',
+                    description: "'sizes' must be an array of avail sizes",
+                    uniqueItems: true,
+                    minItems: 1,
+                    items: {
+                        bsonType: 'string'
+                    }
+                },
+                category: {
+                    bsonType: 'string',
+                    required: ['name'],
+                    properties: {
+                        name: {bsonType: 'string'},
+                        image: {bsonType: 'string'}
+                    }
+                }
+            }
+        }
+    }
+})

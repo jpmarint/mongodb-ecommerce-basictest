@@ -1,0 +1,44 @@
+use("juan-store")
+
+db.getCollectionInfos()
+
+db.runCommand({
+    collMod: 'users',
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['name', 'last_name', 'email', 'password', 'rol'],
+            additionalProperties: true,
+            properties: {
+                name: {
+                    bsonType: 'string',
+                    description: "'name' must be a string and is required"
+                },
+                last_name: {
+                    bsonType: 'string',
+                    description: "'lastname' must be a string and is required"
+                },
+                email: {
+                    bsonType: 'string',
+                    description: "'email' must be a string and is required"
+                },
+                password: {
+                    bsonType: 'string',
+                    description: "'password' must be a string and is required",
+                    pattern: "^[A-Za-z0-9]{8,}$"
+                },
+                age: {
+                    bsonType: 'number',
+                    minimum: 18,
+                    maximum: 100
+                },
+                isSingle: {
+                    bsonType: 'bool'
+                },
+                rol: {
+                    enum: ['customer', 'seller', 'admin']
+                }
+            }
+        }
+    }
+})

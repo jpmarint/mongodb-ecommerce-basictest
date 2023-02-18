@@ -1,0 +1,40 @@
+use("juan-store")
+
+
+db.createCollection("users", {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['name', 'last_name', 'email', 'password', 'rol'],
+            properties: {
+                name: {
+                    bsonType: 'string',
+                    description: "'name' must be a string and is required"
+                },
+                last_name: {
+                    bsonType: 'string',
+                    description: "'lastname' must be a string and is required"
+                },
+                email: {
+                    bsonType: 'string',
+                    description: "'email' must be a string and is required"
+                },
+                password: {
+                    bsonType: 'string',
+                    description: "'password' must be a string and is required"
+                },
+                age: {
+                    bsonType: 'number',
+                    minimum: 18,
+                    maximum: 100
+                },
+                isSingle: {
+                    bsonType: 'bool'
+                },
+                rol: {
+                    enum: ['customer', 'seller', 'admin']
+                }
+            }
+        }
+    }
+})

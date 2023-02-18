@@ -1,0 +1,3 @@
+use("juan-store")
+
+db.users.find()
