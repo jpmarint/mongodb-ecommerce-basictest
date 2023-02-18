@@ -1,0 +1,5 @@
+use("juan-store")
+
+// db.users.find()
+// db.orders.find()
+db.orders.find({"items.qty": {$gt: 2}})

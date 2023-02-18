@@ -1,0 +1,31 @@
+use("juan-store")
+
+// db.orders.insertOne({
+//     user_id: ObjectId('63f14173abcaa66e4f6f5e73'),
+//     date: "2020-12-12",
+//     items:[
+//         {
+//             name: 'Camiseta',
+//             price: 120,
+//             qty: 1
+//         },
+//         {
+//             name: 'Pantalon',
+//             price: 200,
+//             qty: 2
+//         }
+//     ]
+// })
+
+db.orders.insertOne({
+    user_id: ObjectId('63f14173abcaa66e4f6f5e73'),
+    date: "2020-12-12",
+    items:[
+        {
+            name: 'Jugute',
+            price: 120,
+            qty: 3
+        }
+    ]
+})
+

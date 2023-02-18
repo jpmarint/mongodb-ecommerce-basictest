@@ -1,11 +1,21 @@
 use("juan-store")
 
 db.users.insertOne({
-    name: "Juan",
-    last_name: "Marin",
-    email: "correo@example.com",
-    password: "Pepito1234",
-    rol: "seller",
-    age: 23,
-    isSingle: true
+    name: "Daniela",
+    last_name: "Reyes",
+    email: "dani@example.com",
+    password: "contra",
+    rol: "admin",
+    age: 20,
+    isSingle: true,
+    address: {
+        street: 'cll 48',
+        city: 'Cali',
+        zip: '70050'
+    },
+    shipping_address: {
+        street: 'cr 30 20',
+        city: 'Bogota',
+        zip: '12011'
+    }
 })

@@ -1,0 +1,16 @@
+use("juan-store")
+
+db.stores.insertOne({
+    storeId: 'ST001',
+    name: "JuanPa",
+    address: "Cra 1ra"
+})
+
+db.stores_details.insertOne({
+    storeId: 'ST001',
+    description: 'example texto',
+    manager: {
+        email: "manager@ejemplo.com",
+        cellPhone: "123 123 1234"
+    }
+})

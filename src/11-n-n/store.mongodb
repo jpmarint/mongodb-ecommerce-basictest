@@ -1,0 +1,19 @@
+use("juan-store")
+
+db.stores.insertMany([
+    {
+        name: 'Store 1',
+        products_ids: [
+            ObjectId("63f14c6d8a69155429c509eb"),
+            ObjectId("63f14c6d8a69155429c509ec")
+        ]
+    },
+    {
+        name: 'Store 2',
+        products_ids: [
+            ObjectId("63f14c6d8a69155429c509eb"),
+            ObjectId("63f14c6d8a69155429c509ec"),
+            ObjectId("63f14c6d8a69155429c509ed")
+        ]
+    }
+])
